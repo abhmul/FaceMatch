@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>FaceMatch Survey</title>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/main.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css"/>
 </head>
 <body>
 <div class="wrapOverall">
-    <div class="header"><h2 class="'siteTitle">FaceMatch Survey</h2></div><!-- END header -->
+    <div class="header"><?php head(); ?></div><!-- END header -->
     <div class="wrapContent">
         <div class="sideNav">
             <ul>
