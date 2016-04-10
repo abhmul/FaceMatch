@@ -8,6 +8,7 @@
 
 body {
     margin: 0px;
+    font-family: SansSerif;
 }
 
 p {}
@@ -19,6 +20,11 @@ h1, h2, h3, h4, h5, h6 {}
 /*############################## */
 /*###### Heading Rules ######### */
 /*############################## */
+
+h2.siteTitle{
+    margin: 0px;
+    padding: 15px 0px 0px 15px;
+}
 
 h3.qTitle{
     margin: 0px;
@@ -45,6 +51,7 @@ h3.qTitle{
 .header{
     background-color: #DFDFDF;
     border-right: 1px solid #999999;
+    height: 60px;
 }
 .content{
     width: 660px;
@@ -56,6 +63,14 @@ h3.qTitle{
 .footer{
     background-color: #EFEFEF;
     clear: both;
+    margin: 0px;
+    padding: 4px;
+    border-top:1px dotted #999999;
+}
+
+.footer p{
+    margin: 0px;
+    padding: 0px;
 }
 
 /*############################## */
