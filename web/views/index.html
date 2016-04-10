@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FaceMatch Survey</title>
+</head>
+<body>
+<div class="wrapOverall">
+    <div class="header"><h2>FaceMatch Survey</h2></div><!-- END header -->
+    <div class="wrapContent">
+        <div class="sideNav">
+            <ul>
+                <li><a href="#">Survey 1</a></li>
+                <li><a href="#">Survey 2</a></li>
+            </ul>
+        </div><!-- END sideNav -->
+        <div class="content">
+            <h2>Survey Name</h2>
+            <h3>Question 1</h3>
+            <form action="index.php" method="post">
+                <input type="text" name="answer" size="30" />
+                <input type="submit" value="Submit" name="submit" />
+                <input type="hidden" name="questionid" value="questionid" />
+                <input type="hidden" name="submitted" value="1" />
+            </form>
+        </div><!-- END content -->
+    </div><!-- END wrapContent -->
+
+    <div class="footer"><p><a href="admin/index.php">Admin Panel</a></p></div><!-- END footer -->
+</div><!-- END wrapOverall -->
+</body>
+</html>
