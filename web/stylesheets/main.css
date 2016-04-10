@@ -6,7 +6,9 @@
 /*####Common Tag Rules########## */
 /*############################## */
 
-body {}
+body {
+    margin: 0px;
+}
 
 p {}
 a {}
@@ -15,11 +17,22 @@ a:hover {}
 h1, h2, h3, h4, h5, h6 {}
 
 /*############################## */
+/*###### Heading Rules ######### */
+/*############################## */
+
+h3.qTitle{
+    margin: 0px;
+    padding: 0px;
+}
+/*############################## */
 /*##########Wrap Rules########## */
 /*############################## */
 
 .wrapOverall {
-
+    width:900px;
+    border-left:1px solid #999999;
+    border-right: 1px solid #999999;
+    margin: 0px 0px 0px 30px;
 }
 .wrapContent {
 
@@ -30,13 +43,19 @@ h1, h2, h3, h4, h5, h6 {}
 /*############################## */
 
 .header{
-
+    background-color: #DFDFDF;
+    border-right: 1px solid #999999;
 }
 .content{
-
+    width: 660px;
+    float: right;
+    border-left:1px dotted #999999;
+    min-height: 500px;
+    padding: 0px 20px;
 }
 .footer{
-
+    background-color: #EFEFEF;
+    clear: both;
 }
 
 /*############################## */
@@ -44,21 +63,36 @@ h1, h2, h3, h4, h5, h6 {}
 /*############################## */
 
 .sideNav {
-
+    width: 199px;
+    float: left;
 }
 
 .sideNav ul {
-
+    margin: 0px;
+    padding: 0px;
 }
 
 .sideNav ul li {
-
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    border-bottom: 1px solid #999999;
 }
 
 .sideNav ul li a{
-
+    margin: 0px;
+    padding: 2px 0px 2px 4px;
+    text-decoration: none;
 }
 
 .sideNav ul li a:hover{
+    background-color: #EFEFEF;
+}
 
+/*############################## */
+/*######Custom Element Rules#### */
+/*############################## */
+
+.entry{
+    margin: 30px;
 }
