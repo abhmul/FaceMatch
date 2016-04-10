@@ -6,9 +6,9 @@
  * Time: 3:09 PM
  */
 
-include('config/connection.php'); //Attach our connection script
+include('connection.php'); //Attach our connection script
 
-include('functions/template.php'); //Attach our template functions
+include('../functions/template.php'); //Attach our template functions
 //include('functions/sandbox.php') //Attach our unsorted functions
 
 
