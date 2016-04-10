@@ -14,7 +14,7 @@ include("config/config.php"); //Add configuration file
 </head>
 <body>
 <div class="wrapOverall">
-    <div class="header"><?php head(); ?></div><!-- END header -->
+    <div class="header"><h2 class='siteTitle'>FaceMatch Survey</h2></div><!-- END header -->
     <div class="wrapContent">
         <div class="sideNav">
             <ul>
