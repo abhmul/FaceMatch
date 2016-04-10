@@ -7,6 +7,8 @@
  */
 
 function head()  {
-    echo '<h2 class="siteTitle">FaceMatch Survey</h2>';
+    echo "<h2 class='siteTitle'>FaceMatch Survey</h2>";
 
 }
+
+?>
