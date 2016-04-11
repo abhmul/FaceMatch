@@ -6,6 +6,8 @@
  * Time: 2:30 PM
  */
 
+include('config/connection.php'); //Attach our connection script
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
