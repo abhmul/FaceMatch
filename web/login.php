@@ -21,7 +21,9 @@
 </head>
 
 <body align="center">
-<<div class="entry">
+<h1>FaceMatch Survey Login</h1>
+<h2>Log in to continue you the survey from where you left off.</h2>
+<div class="entry">
     <h3 class="qTitle">Email: </h3>
     <form action="index.php" method="post">
         <input type="text" name="answer" size="65" />
