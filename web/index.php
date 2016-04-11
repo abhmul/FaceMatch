@@ -1,5 +1,15 @@
 <?php
 include("config/config.php"); //Add configuration file
+include ("functions/user_search.php");
+
+$exist = does_id_exist($conn, $_POST["email"]);
+if ($exist) {
+    $last_pic_id = get_last_pic($conn, $_POST["email"]);
+    $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
+} else {
+    $pic_filename = str_pad(1, 4, "0", STR_PAD_LEFT).".jpg";
+}
+
 
 ?>
 
@@ -25,7 +35,14 @@ include("config/config.php"); //Add configuration file
         <div class="content">
             <h2>Survey Name</h2>
             <div class="entry">
-                <h3 class="qTitle">Question 1: </h3>
+                <table cellspacing="10" cellpadding="10" align="center">
+                    <tr class="image_row">
+                        <td class="pic">
+                            <img src="<?php echo $pic_filename?>" alt="Mountain View" style="width:304px;height:228px;">
+                        </td>
+                    </tr>
+                </table>
+                <h3 class="qTitle">Rate the picture above? </h3>
                 <form action="index.php" method="post">
                     <input type="text" name="answer" size="65" />
                     <input type="submit" value="Submit" name="submit" />

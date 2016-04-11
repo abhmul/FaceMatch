@@ -28,7 +28,7 @@ include('config/connection.php'); //Attach our connection script
 <div class="entry">
     <h3 class="qTitle">Email: </h3>
     <form action="index.php" method="post">
-        <input type="text" name="answer" size="65" />
+        <input type="text" name="email" size="65" />
         <input type="submit" value="Submit" name="submit" />
         <input type="hidden" name="questionid" value="questionid" />
         <input type="hidden" name="submitted" value="1" />
