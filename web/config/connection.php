@@ -13,7 +13,7 @@
 //
 //$dbc = @mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) OR die ("Connection failed: " . mysqli_connect_error() );
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$url = parse_url(getenv("us-cdbr-iron-east-03.cleardb.net/heroku_22bf2fadbb5295c"));
 
 $server = $url["host"];
 $username = $url["user"];

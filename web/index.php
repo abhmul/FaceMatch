@@ -47,7 +47,7 @@ if ($exist) {
                 <form action="index.php" method="post">
                     <!--<input type="text" name="answer" size="65" /> -->
                     <input type="submit" value="Submit" name="submit" />
-                    <input type="submit" value="0" name="Ehhhh" />
+                    <input type="submit" value="Ehhh" name="0" />
                     <input type="hidden" name="questionid" value="questionid" />
                     <input type="hidden" name="submitted" value="1" />
                 </form>
