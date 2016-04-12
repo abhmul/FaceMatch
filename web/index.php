@@ -39,7 +39,7 @@ if ($exist) {
                 <table cellspacing="10" cellpadding="10" align="center">
                     <tr class="image_row">
                         <td class="pic">
-                            <img src="<?php echo $pic_filename?>" alt="Mountain View" style="width:304px;height:228px;">
+                            <img src="images/<?php echo $pic_filename?>" alt="Mountain View" style="width:304px;height:228px;">
                         </td>
                     </tr>
                 </table>
