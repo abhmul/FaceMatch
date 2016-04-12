@@ -3,6 +3,7 @@ include("config/config.php"); //Add configuration file
 include ("functions/user_search.php");
 
 $exist = does_id_exist($conn, $_POST["email"]);
+echo $exist;
 if ($exist) {
     $last_pic_id = get_last_pic($conn, $_POST["email"]);
     $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
