@@ -5,8 +5,9 @@ include ("functions/user_search.php");
 $exist = does_id_exist($conn, $_POST["email"]);
 if ($exist) {
     $last_pic_id = get_last_pic($conn, $_POST["email"]);
-    $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
+    $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
 } else {
+    mysqli_query($conn, "INSERT INTO users (userid, lastpicid) VALUES ({$_POST["email"]}, 1)");
     $pic_filename = str_pad(1, 4, "0", STR_PAD_LEFT).".jpg";
 }
 
@@ -38,14 +39,15 @@ if ($exist) {
                 <table cellspacing="10" cellpadding="10" align="center">
                     <tr class="image_row">
                         <td class="pic">
-                            <img src="<?php echo $pic_filename?>" alt="Mountain View" style="width:304px;height:228px;">
+                            <img src="images/<?php echo $pic_filename?>" alt="Mountain View" style="width:304px;height:228px;">
                         </td>
                     </tr>
                 </table>
                 <h3 class="qTitle">Rate the picture above? </h3>
                 <form action="index.php" method="post">
-                    <input type="text" name="answer" size="65" />
+                    <!--<input type="text" name="answer" size="65" /> -->
                     <input type="submit" value="Submit" name="submit" />
+                    <input type="submit" value="0" name="Ehhhh" />
                     <input type="hidden" name="questionid" value="questionid" />
                     <input type="hidden" name="submitted" value="1" />
                 </form>
