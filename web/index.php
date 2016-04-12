@@ -45,8 +45,9 @@ if ($exist) {
                 </table>
                 <h3 class="qTitle">Rate the picture above? </h3>
                 <form action="index.php" method="post">
-                    <input type="text" name="answer" size="65" />
+                    <!--<input type="text" name="answer" size="65" /> -->
                     <input type="submit" value="Submit" name="submit" />
+                    <input type="submit" value="0" name="Ehhhh" />
                     <input type="hidden" name="questionid" value="questionid" />
                     <input type="hidden" name="submitted" value="1" />
                 </form>
