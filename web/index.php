@@ -5,10 +5,12 @@ include ("functions/user_search.php");
 $exist = does_id_exist($conn, $_POST["email"]);
 echo $exist;
 if ($exist) {
-    $last_pic_id = get_last_pic($conn, $_POST["email"]);
-    $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
+//    $last_pic_id = get_last_pic($conn, $_POST["email"]);
+//    $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
+    $pic_filename = str_pad(15, 4, "0", STR_PAD_LEFT).".jpg";
 } else {
-    mysqli_query($conn, "INSERT INTO users (userid, lastpicid) VALUES ({$_POST["email"]}, 1)");
+//    mysqli_query($conn, "INSERT INTO users (userid, lastpicid) VALUES ({$_POST["email"]}, 1)");
+//    $pic_filename = str_pad(1, 4, "0", STR_PAD_LEFT).".jpg";
     $pic_filename = str_pad(1, 4, "0", STR_PAD_LEFT).".jpg";
 }
 
@@ -35,7 +37,7 @@ if ($exist) {
             </ul>
         </div><!-- END sideNav -->
         <div class="content">
-            <h2>Survey Name <?php echo $exist?></h2>
+            <h2>Survey Name</h2>
             <div class="entry">
                 <table cellspacing="10" cellpadding="10" align="center">
                     <tr class="image_row">
