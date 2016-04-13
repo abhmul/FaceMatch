@@ -28,6 +28,6 @@ if ($conn->connect_error) {
 }
 
 $result = mysqli_query($conn, "SHOW TABLES");
-echo $result
+echo $result;
 
 ?>
