@@ -35,7 +35,7 @@ if ($exist) {
             </ul>
         </div><!-- END sideNav -->
         <div class="content">
-            <h2>Survey Name</h2>
+            <h2>Survey Name <?php echo $exist?></h2>
             <div class="entry">
                 <table cellspacing="10" cellpadding="10" align="center">
                     <tr class="image_row">
