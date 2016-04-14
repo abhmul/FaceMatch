@@ -17,6 +17,6 @@ function does_id_exist($conn, $userid) {
 function get_last_pic($conn, $userid) {
     $pic_id_result = mysqli_query($conn, "SELECT lastpicid FROM users WHERE userid= {$userid}");
     $row = mysqli_fetch_assoc($pic_id_result);
-    return $row[0];
+    return $row[1];
 }
 ?>
