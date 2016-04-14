@@ -41,11 +41,17 @@ $sql = "SELECT IF ( EXISTS (SELECT lastpicid FROM users WHERE userid= '"
     .$a
     ."'), 0)";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Stuff might be working";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+
+$result = $conn->query($sql);
+$row = mysqli_fetch_assoc($result);
+$num = $row[0];
+echo $num;
+
+//if ($conn->query($sql) === TRUE) {
+//    echo "Stuff might be working";
+//} else {
+//    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+//}
 
 //$row = mysqli_fetch_assoc($result);
 //$num = $row[0];
