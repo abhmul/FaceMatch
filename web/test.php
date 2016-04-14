@@ -27,7 +27,7 @@ $a = $_POST["email"];
 $sql = "INSERT INTO users (userid, lastpicid)"
     ." VALUES ('"
     .$a
-    ."', 15)";
+    ."', 1)";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
