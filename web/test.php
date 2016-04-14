@@ -35,26 +35,40 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-$sql = "SELECT IF ( EXISTS (SELECT lastpicid FROM users WHERE userid= '"
-    .$a
-    ."'), (SELECT lastpicid FROM users WHERE userid= '"
-    .$a
-    ."'), 0)";
-
-
+$sql = "SELECT userid, lastpicid FROM users";
 $result = $conn->query($sql);
-echo $sql;
-//$row = mysqli_fetch_assoc($result);
 
-if($result === FALSE) {
-//    die(mysqli->error); // or $mysqli->error_list
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+if ($result->num_rows > 0) {
+// output data of each row
+while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . "<br>";
 }
-else {
-// as of php 5.4 mysqli_result implements Traversable, so you can use it with foreach
-    foreach ($result as $row) {
-        echo $row[0];
-    }
+
+
+
+
+
+
+//$sql = "SELECT IF ( EXISTS (SELECT lastpicid FROM users WHERE userid= '"
+//    .$a
+//    ."'), (SELECT lastpicid FROM users WHERE userid= '"
+//    .$a
+//    ."'), 0)";
+//
+//
+//$result = $conn->query($sql);
+//echo $sql;
+////$row = mysqli_fetch_assoc($result);
+//
+//if($result === FALSE) {
+////    die(mysqli->error); // or $mysqli->error_list
+//    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+//}
+//else {
+//// as of php 5.4 mysqli_result implements Traversable, so you can use it with foreach
+//    foreach ($result as $row) {
+//        echo $row[0];
+//    }
 }
 //$num = $row[0];
 //echo $num;
