@@ -2,16 +2,22 @@
 include("config/config.php"); //Add configuration file
 include ("functions/user_search.php");
 
-$exist = does_id_exist($conn, $_POST["email"]);
-//echo $exist;
-//if ($exist) {
-//    $last_pic_id = get_last_pic($conn, $_POST["email"]);
-//    $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
-////    $pic_filename = str_pad(15, 4, "0", STR_PAD_LEFT).".jpg";
-//} else {
-//    mysqli_query($conn, "INSERT INTO users (userid, lastpicid) VALUES ({$_POST["email"]}, 1)");
+$email = $_POST["email"];
+$exist = does_id_exist($conn, $email);
+echo $exist;
+if ($exist === TRUE) {
+    $last_pic_id = get_last_pic($conn, $email);
+    $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
+//    $pic_filename = str_pad(15, 4, "0", STR_PAD_LEFT).".jpg";
+} else {
+    $sql = "INSERT INTO users (userid, lastpicid)"
+        ." VALUES ('"
+        .$email
+        ."', 1)";
+}
+    mysqli_query($conn, "INSERT INTO users (userid, lastpicid) VALUES ({$_POST["email"]}, 1)");
+    $pic_filename = str_pad(1, 4, "0", STR_PAD_LEFT).".jpg";
 //    $pic_filename = str_pad(1, 4, "0", STR_PAD_LEFT).".jpg";
-////    $pic_filename = str_pad(1, 4, "0", STR_PAD_LEFT).".jpg";
 //}
 $last_pic_id = get_last_pic($conn, $_POST["email"]);
 $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";

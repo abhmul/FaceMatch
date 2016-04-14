@@ -3,8 +3,10 @@
 <body>
 
 <?php
+include('functions/user_search.php');
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
 
 $server = $url["host"];
 $username = $url["user"];
@@ -32,6 +34,9 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
+$exist = does_id_exist($conn, $a);
+echo $exist;
+
 ?>
 
 </body>
