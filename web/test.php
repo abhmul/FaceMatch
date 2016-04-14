@@ -36,9 +36,9 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $sql = "SELECT IF ( EXISTS (SELECT lastpicid FROM users WHERE userid= '"
-    .$email
+    .$a
     ."'), (SELECT lastpicid FROM users WHERE userid= '"
-    .$email
+    .$a
     ."'), 0)";
 
 if ($conn->query($sql) === TRUE) {
