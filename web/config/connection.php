@@ -26,8 +26,8 @@ $conn = new mysqli($server, $username, $password, $db);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$result = mysqli_query($conn, "SHOW TABLES");
-echo $result;
+//
+//$result = mysqli_query($conn, "SHOW TABLES");
+//echo $result;
 
 ?>
