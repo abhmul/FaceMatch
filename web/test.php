@@ -22,7 +22,10 @@ echo "Does it work?";
 
 $a = $_POST["email"];
 
-$sql = "INSERT INTO users (userid, lastpicid) VALUES ($a, 10)";
+$sql = "INSERT INTO users (userid, lastpicid)"
+    ." VALUES ('"
+    .$a
+    ."', 15)";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
