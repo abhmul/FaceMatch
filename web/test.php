@@ -40,10 +40,10 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
 // output data of each row
-while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . "<br>";
+    while ($row = $result->fetch_assoc()) {
+        echo "userid: " . $row["userid"] . " - Picture: " . $row["lastpicid"] . "<br>";
+    }
 }
-
 
 
 
@@ -69,7 +69,7 @@ while($row = $result->fetch_assoc()) {
 //    foreach ($result as $row) {
 //        echo $row[0];
 //    }
-}
+//}
 //$num = $row[0];
 //echo $num;
 
