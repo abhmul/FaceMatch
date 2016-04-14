@@ -33,13 +33,9 @@ $sql = "SELECT lastpicid FROM users WHERE userid= '"
 
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-// output data of each row
-    while ($row = $result->fetch_assoc()) {
-        $last_pic_id = $row["lastpicid"];
-    }
-}
-$pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
+$row = $result->fetch_assoc();
+$last_pic_id = $row["lastpicid"];
+$pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
 
 
 ?>
