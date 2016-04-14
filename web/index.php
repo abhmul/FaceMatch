@@ -29,6 +29,7 @@ $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css"/>
 </head>
 <body>
+<?php echo $last_pic_id ?>
 <div class="wrapOverall">
     <div class="header"><h2 class='siteTitle'>FaceMatch Survey</h2></div><!-- END header -->
     <div class="wrapContent">
