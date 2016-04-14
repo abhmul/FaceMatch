@@ -35,9 +35,9 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-$sql = "SELECT userid, lastpicid FROM users WHERE userid ='"
+$sql = "SELECT IF ( EXISTS (SELECT userid, lastpicid FROM users WHERE userid ='"
         .$a
-        ."'";
+        ."'), 1, 0)";
 echo $sql;
 $result = $conn->query($sql);
 
