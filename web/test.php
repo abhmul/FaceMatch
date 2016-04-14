@@ -35,7 +35,10 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-$sql = "SELECT userid, lastpicid FROM users WHERE userid = {$a}";
+$sql = "SELECT userid, lastpicid FROM users WHERE userid ='"
+        .$a
+        ."'";
+echo $sql;
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
