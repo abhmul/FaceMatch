@@ -43,9 +43,14 @@ $sql = "SELECT IF ( EXISTS (SELECT lastpicid FROM users WHERE userid= '"
 
 
 $result = $conn->query($sql);
-$row = mysqli_fetch_assoc($result);
-$num = $row[0];
-echo $num;
+echo $sql;
+//$row = mysqli_fetch_assoc($result);
+
+while($row = mysql_fetch_assoc($result)){
+    print_r($row);
+}
+//$num = $row[0];
+//echo $num;
 
 //if ($conn->query($sql) === TRUE) {
 //    echo "Stuff might be working";
