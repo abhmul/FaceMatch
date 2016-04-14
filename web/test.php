@@ -46,8 +46,15 @@ $result = $conn->query($sql);
 echo $sql;
 //$row = mysqli_fetch_assoc($result);
 
-while($row = mysql_fetch_assoc($result)){
-    print_r($row);
+if($result === FALSE) {
+//    die(mysqli->error); // or $mysqli->error_list
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+else {
+// as of php 5.4 mysqli_result implements Traversable, so you can use it with foreach
+    foreach ($result as $row) {
+        echo $row[0];
+    }
 }
 //$num = $row[0];
 //echo $num;
