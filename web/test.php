@@ -9,7 +9,7 @@ $a = $_POST["email"];
 
 $sql = "INSERT INTO users (userid, lastpicid) VALUES ($a, 10)";
 
-if (mysqli_query($conn, $sql)) {
+if ($conn->query($sql)) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
