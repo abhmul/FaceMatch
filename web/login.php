@@ -27,7 +27,7 @@ include('config/connection.php'); //Attach our connection script
 <h2>Log in to continue you the survey from where you left off.</h2>
 <div class="entry">
     <h3 class="qTitle">Email: </h3>
-    <form action="test.php" method="post">
+    <form action="index.php" method="post">
         <input type="text" name="email" size="65" />
         <input type="submit" value="Submit" name="submit" />
         <input type="hidden" name="questionid" value="questionid" />

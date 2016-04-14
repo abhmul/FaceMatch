@@ -1,6 +1,5 @@
 <?php
 include("config/config.php"); //Add configuration file
-include ("functions/user_search.php");
 
 $email = $_POST["email"];
 //$exist = does_id_exist($conn, $email);
@@ -17,14 +16,27 @@ $email = $_POST["email"];
 //    $pic_filename = str_pad(1, 4, "0", STR_PAD_LEFT).".jpg";
 //}
 
-$sql = "SELECT IF ( EXISTS (SELECT lastpicid FROM users WHERE userid= '"
-        .$email
-        ."'), (SELECT lastpicid FROM users WHERE userid= '"
-        .$email
-        ."'), 0)";
+$sql = "INSERT INTO users (userid, lastpicid) VALUES ('"
+    .$email
+    ."',1) ON DUPLICATE KEY UPDATE lastpicid = lastpicid + 1";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Logged in!";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 
 
-$last_pic_id = get_last_pic($conn, $_POST["email"]);
+$sql = "SELECT lastpicid FROM users WHERE userid= '"
+        .$email
+        ."'";
+
+if ($result->num_rows > 0) {
+// output data of each row
+    $row = $result->fetch_assoc();
+    $last_pic_id = $row["lastpicid"];
+}
+
 $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
 
 
