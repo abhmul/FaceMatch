@@ -28,7 +28,7 @@ if ($conn->query($sql) === TRUE) {
 
 
 $sql = "SELECT lastpicid FROM users WHERE userid= '"
-        .$a
+        .$email
         ."'";
 
 $result = $conn->query($sql);
