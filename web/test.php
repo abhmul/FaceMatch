@@ -35,9 +35,9 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-$sql = "SELECT IF ( EXISTS (SELECT userid, lastpicid FROM users WHERE userid ='"
+$sql = "INSERT INTO users (userid, lastpicid) VALUES ('"
         .$a
-        ."'), 1, 0)";
+        ."',1) ON DUPLICATE KEY UPDATE lastpicid = lastpicid + 1";
 echo $sql;
 $result = $conn->query($sql);
 
