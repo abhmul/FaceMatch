@@ -3,19 +3,27 @@ include("config/config.php"); //Add configuration file
 include ("functions/user_search.php");
 
 $email = $_POST["email"];
-$exist = does_id_exist($conn, $email);
-echo $exist;
-if ($exist === TRUE) {
-    $last_pic_id = get_last_pic($conn, $email);
-    $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
-} else {
-    $sql = "INSERT INTO users (userid, lastpicid)"
-        ." VALUES ('"
+//$exist = does_id_exist($conn, $email);
+//echo $exist;
+//if ($exist === TRUE) {
+//    $last_pic_id = get_last_pic($conn, $email);
+//    $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
+//} else {
+//    $sql = "INSERT INTO users (userid, lastpicid)"
+//        ." VALUES ('"
+//        .$email
+//        ."', 1)";
+//    $conn->query($sql);
+//    $pic_filename = str_pad(1, 4, "0", STR_PAD_LEFT).".jpg";
+//}
+
+$sql = "SELECT IF ( EXISTS (SELECT lastpicid FROM users WHERE userid= '"
         .$email
-        ."', 1)";
-    $conn->query($sql);
-    $pic_filename = str_pad(1, 4, "0", STR_PAD_LEFT).".jpg";
-}
+        ."'), (SELECT lastpicid FROM users WHERE userid= '"
+        .$email
+        ."'), 0)";
+
+
 $last_pic_id = get_last_pic($conn, $_POST["email"]);
 $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
 

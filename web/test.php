@@ -34,8 +34,17 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-$exist = does_id_exist($conn, $a);
-echo $exist;
+
+$sql = "SELECT IF ( EXISTS (SELECT lastpicid FROM users WHERE userid= '"
+    .$email
+    ."'), (SELECT lastpicid FROM users WHERE userid= '"
+    .$email
+    ."'), 0)";
+
+$result = $conn->query($sql);
+$row = mysqli_fetch_assoc($result);
+$num = $row[0];
+echo $num;
 
 ?>
 
