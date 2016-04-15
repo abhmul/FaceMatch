@@ -35,7 +35,7 @@ h3.qTitle{
 /*############################## */
 
 .wrapOverall {
-    width:900px;
+    /*width:900px;*/
     border-left:1px solid #999999;
     border-right: 1px solid #999999;
     margin: 0px 0px 0px 30px;
@@ -54,7 +54,7 @@ h3.qTitle{
     height: 60px;
 }
 .content{
-    width: 660px;
+    /*width: 660px;*/
     float: right;
     border-left:1px dotted #999999;
     min-height: 500px;
