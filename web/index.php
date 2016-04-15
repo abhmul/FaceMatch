@@ -46,14 +46,7 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
 <div class="wrapOverall">
     <div class="header"><h2 class='siteTitle'>FaceMatch Survey</h2></div><!-- END header -->
     <div class="wrapContent">
-        <div class="sideNav">
-            <ul>
-                <li><a href="#">Survey 1</a></li>
-                <li><a href="#"><?php echo $last_pic_id ?><?php echo "Fucking hell" ?></a></li>
-            </ul>
-        </div><!-- END sideNav -->
         <div class="content">
-            <h2>Survey Name</h2>
             <div class="entry">
                 <table cellspacing="10" cellpadding="10" align="center">
                     <tr class="image_row">
