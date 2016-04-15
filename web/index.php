@@ -36,6 +36,11 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
     <meta http-equiv="Content-Type" content="text/html"  />
     <title>FaceMatch Survey</title>
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css"/>
+    <style type="text/css">
+           h1 { font-family: Roboto;}
+           h2 { font-family: Roboto;}
+           body { text-align:center; }
+    </style>
 </head>
 <body>
 <div class="wrapOverall">
