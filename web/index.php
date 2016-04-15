@@ -2,7 +2,7 @@
 include("config/config.php"); //Add configuration file
 
 $email = $_POST["email"];
-$
+
 $sql = "INSERT INTO users (userid, lastpicid) VALUES ('"
     .$email
     ."',1) ON DUPLICATE KEY UPDATE lastpicid = lastpicid + 1";
