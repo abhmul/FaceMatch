@@ -111,3 +111,11 @@ h3.qTitle{
 .entry{
     margin: 30px;
 }
+
+.widthSet {
+    max-width: 100px;
+}
+
+.heightSet {
+    max-height: 100px;
+}
