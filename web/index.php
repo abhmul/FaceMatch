@@ -2,20 +2,7 @@
 include("config/config.php"); //Add configuration file
 
 $email = $_POST["email"];
-//$exist = does_id_exist($conn, $email);
-//echo $exist;
-//if ($exist === TRUE) {
-//    $last_pic_id = get_last_pic($conn, $email);
-//    $pic_filename = str_pad($last_pic_id+1, 4, "0", STR_PAD_LEFT).".jpg";
-//} else {
-//    $sql = "INSERT INTO users (userid, lastpicid)"
-//        ." VALUES ('"
-//        .$email
-//        ."', 1)";
-//    $conn->query($sql);
-//    $pic_filename = str_pad(1, 4, "0", STR_PAD_LEFT).".jpg";
-//}
-
+$
 $sql = "INSERT INTO users (userid, lastpicid) VALUES ('"
     .$email
     ."',1) ON DUPLICATE KEY UPDATE lastpicid = lastpicid + 1";
@@ -73,10 +60,13 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
                 <h3 class="qTitle">Rate the picture above? </h3>
                 <form action="index.php" method="post">
                     <!--<input type="text" name="answer" size="65" /> -->
-                    <input type="submit" value="Submit" name="submit" />
-                    <input type="submit" value="Ehhh" name="0" />
-                    <input type="hidden" name="questionid" value="questionid" />
-                    <input type="hidden" name="submitted" value="1" />
+                    
+                    <input type = 'hidden' name = 'pic_id' value = '<?php echo $last_pic_id?>'>
+                    <input type = 'submit' name = 'Hmmmmm...' value = '1'>
+                    <input type = 'submit' name = 'OK' value = '2'>
+                    <input type = 'submit' name = 'Nice' value = '3'>
+                    <input type = 'submit' name = 'Hot' value = '4'>
+                    <input type = 'submit' name = 'Stunning' value = '5'>
                 </form>
             </div><!-- END entry -->
         </div><!-- END content -->
