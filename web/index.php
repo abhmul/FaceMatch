@@ -39,6 +39,7 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
     <style type="text/css">
            h1 { font-family: Roboto;}
            h2 { font-family: Roboto;}
+           h3 { font-family: Roboto;}
            body { text-align:center; }
     </style>
 </head>
