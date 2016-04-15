@@ -61,11 +61,11 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
                     <!--<input type="text" name="answer" size="65" /> -->
                     
                     <input type = 'hidden' name = 'pic_id' value = '<?php echo $last_pic_id?>'>
-                    <input type = 'submit' name = 'Hmmmmm...' value = '1'>
-                    <input type = 'submit' name = 'OK' value = '2'>
-                    <input type = 'submit' name = 'Nice' value = '3'>
-                    <input type = 'submit' name = 'Hot' value = '4'>
-                    <input type = 'submit' name = 'Stunning' value = '5'>
+                    <input type = 'submit' name = 'rating' value = Hmmmmm...'>
+                    <input type = 'submit' name = 'rating' value = 'OK'>
+                    <input type = 'submit' name = 'rating' value = 'Nice'>
+                    <input type = 'submit' name = 'rating' value = 'Hot'>
+                    <input type = 'submit' name = 'rating' value = 'Stunning'>
                 </form>
             </div><!-- END entry -->
         </div><!-- END content -->
