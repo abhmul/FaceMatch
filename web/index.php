@@ -43,20 +43,20 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
     </style>
 </head>
 <body style="height: 100%">
-<div class="wrapOverall">
-    <div class="header"><h2 class='siteTitle'>FaceMatch Survey</h2></div><!-- END header -->
-    <div class="wrapContent">
-        <div class="content">
-            <div class="entry">
-                <table cellspacing="10" cellpadding="10" align="center">
+<div class="wrapOverall" style="height: 100%">
+    <div class="header" style="height: 100%"><h2 class='siteTitle'>FaceMatch Survey</h2></div><!-- END header -->
+    <div class="wrapContent" style="height: 100%">
+        <div class="content" style="height: 100%">
+            <div class="entry" style="height: 100%">
+                <table cellspacing="10" cellpadding="10" align="center" style="height: 100%">
                     <tr class="image_row">
                         <td class="pic">
                             <img src="images/<?php echo $pic_filename?>" alt="Mountain View" width="256" class = "widthSet">
                         </td>
                     </tr>
                 </table>
-                <h3 class="qTitle">Rate the picture above? </h3>
-                <form action="index.php" method="post">
+                <h3 class="qTitle" style="height: 100%">Rate the picture above? </h3>
+                <form action="index.php" method="post" style="height: 100%">
                     <!--<input type="text" name="answer" size="65" /> -->
                     
                     <input type = 'hidden' name = 'pic_id' value = '<?php echo $last_pic_id?>'>
@@ -70,7 +70,7 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
         </div><!-- END content -->
     </div><!-- END wrapContent -->
 
-    <div class="footer"><p><a href="admin/index.php">Admin Panel</a></p></div><!-- END footer -->
+    <div class="footer" style="height: 100%"><p><a href="admin/index.php">Admin Panel</a></p></div><!-- END footer -->
 </div><!-- END wrapOverall -->
 </body>
 </html>
