@@ -73,7 +73,7 @@ if ($logged_in == 0){
         .$score
         ." XOR "
         .$likenum
-        .") ON DUPLICATE KEY UPDATE score = NOT "
+        .") ON DUPLICATE KEY UPDATE gender = NOT "
         .$score
         ." XOR "
         .$likenum;
