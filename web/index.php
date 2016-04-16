@@ -1,9 +1,11 @@
 <?php
 include("config/config.php"); //Add configuration file
 
+//Get username and whether the user came from log in page or not
 $email = $_POST["email"];
 $logged_in = (int)$_POST["logged_in?"];
 
+//An array to convert rating to score number
 $rate_to_score = array(
     "Wrong Gender!" => 0,
     "Hmmmmm..." => 1,
@@ -11,23 +13,25 @@ $rate_to_score = array(
     "Nice" => 3,
     "Hot" => 4,
     "Stunning" => 5
-
 );
 
+//An array to convert preference to number
 $like_to_num = array(
     "I like Guys!" => 0,
     "I like Girls!" => 1
 );
 
+//If user did not come from log in page
 if ($logged_in == 0){
 
+    //Get the rated pictures id, its score and users preference num
     $pic_id = $_POST["pic_id"];
     $rating = $_POST["rating"];
     $likenum = $_POST["pref"];
     $score = $rate_to_score[$rating];
 
-    $correct_gender = 1;
-    
+    //Insert the picid, score, userid, and uniqueid made of pic and user into table
+    //Just change the score if there is a duplicate
     $sql = "INSERT INTO scores (picid, score, userid, uniqueid) VALUES ("
         . $pic_id
         . ", "
@@ -40,6 +44,7 @@ if ($logged_in == 0){
         ."') ON DUPLICATE KEY UPDATE score = "
         .$score;
 
+    //Check if query successful
     if ($conn->query($sql) === TRUE) {
         echo "Thank You!";
     } else {
@@ -63,6 +68,10 @@ if ($logged_in == 0){
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
+
+    //Initiate correct gender so while loop runs once
+    $correct_gender = 1;
+
     while ($correct_gender == 1) {
 
         $sql = "UPDATE users SET lastpicid = "
