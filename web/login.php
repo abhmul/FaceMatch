@@ -29,8 +29,8 @@ include('config/connection.php'); //Attach our connection script
     <h3 class="qTitle" style = "font: bold 20px roboto, sans-serif;">Username or NetID: </h3>
     <form action="index.php" method="post">
         <input type="text" name="email" size="20" style = "font: 30px roboto, sans-serif;"/>
-        <input type="submit" value="I like Guys!" name="like" style = "height: 33px; width: 60px; font: 25px roboto, sans-serif;" />
-        <input type="submit" value="I like Girls!" name="like" style = "height: 33px; width: 60px; font: 25px roboto, sans-serif;"/>
+        <input type="submit" value="I like Guys!" name="like" style = "height: auto; width: auto; font: 30px roboto, sans-serif;" />
+        <input type="submit" value="I like Girls!" name="like" style = "height: auto; width: auto; font: 30px roboto, sans-serif;"/>
 <!--        <input type="hidden" name="questionid" value="questionid" />-->
 <!--        <input type="hidden" name="submitted" value="1" />-->
         <input type = 'hidden' name = 'logged_in?' value = "1">
