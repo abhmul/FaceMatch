@@ -42,9 +42,9 @@ $pic_id = $_POST["pic_id"];
 
 if ($logged_in == 0){
 
-    $sql = "INSERT INTO users (userid, lastpicid) VALUES ('"
+    $sql = "UPDATE users SET lastpicid = lastpicid + 1 WHERE userid = '"
         .$email
-        ."', lastpicid = lastpicid + 1)";
+        ."'";
 
     if ($conn->query($sql) === TRUE) {
         echo "";
