@@ -2,6 +2,7 @@
 include("config/config.php"); //Add configuration file
 
 $email = $_POST["email"];
+$logged_in = (int)$_POST["logged_in?"];
 
 $sql = "INSERT INTO users (userid, lastpicid) VALUES ('"
     .$email
@@ -39,18 +40,21 @@ $rate_to_score = array(
 $score = $rate_to_score[$rating];
 $pic_id = $_POST["pic_id"];
 
-$sql = "INSERT INTO scores (picid, score, userid) VALUES ("
-        .$pic_id
-        ." , "
-        .$score
-        ." , '"
-        .$email
-        ."')";
+if ($logged_in == 0){
 
-if ($conn->query($sql) === TRUE) {
-    echo "Logged in!";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    $sql = "INSERT INTO scores (picid, score, userid) VALUES ("
+        . $pic_id
+        . " , "
+        . $score
+        . " , '"
+        . $email
+        . "')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Logged in!";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 }
 
 ?>
@@ -88,6 +92,8 @@ if ($conn->query($sql) === TRUE) {
                     <!--<input type="text" name="answer" size="65" /> -->
                     
                     <input type = 'hidden' name = 'pic_id' value = '<?php echo $last_pic_id?>'>
+                    <input type = 'hidden' name = 'email' value = '<?php echo $email?>'>
+                    <input type = 'hidden' name = 'logged_in?' value = "0">
                     <input type = 'submit' name = 'rating' value = 'Wrong Gender!'>
                     <input type = 'submit' name = 'rating' value = 'Hmmmmm...'>
                     <input type = 'submit' name = 'rating' value = 'OK'>

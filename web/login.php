@@ -31,7 +31,8 @@ include('config/connection.php'); //Attach our connection script
         <input type="text" name="email" size="65" />
         <input type="submit" value="Submit" name="submit" />
         <input type="hidden" name="questionid" value="questionid" />
-        <input type="hidden" name="submitted" value="1" />
+<!--        <input type="hidden" name="submitted" value="1" />-->
+        <input type = 'hidden' name = 'logged_in?' value = "1">
     </form>
 </div><!-- END entry -->
 </body>
