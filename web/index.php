@@ -4,30 +4,6 @@ include("config/config.php"); //Add configuration file
 $email = $_POST["email"];
 $logged_in = (int)$_POST["logged_in?"];
 
-$sql = "INSERT INTO users (userid, lastpicid) VALUES ('"
-    .$email
-    ."',1) ON DUPLICATE KEY UPDATE lastpicid = lastpicid";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Logged in!";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
-
-
-$sql = "SELECT lastpicid FROM users WHERE userid= '"
-        .$email
-        ."'";
-
-$result = $conn->query($sql);
-
-$row = $result->fetch_assoc();
-$last_pic_id = $row["lastpicid"];
-echo $last_pic_id;
-$pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
-
-
-$rating = $_POST["rating"];
 $rate_to_score = array(
     "Wrong Gender!" => 0,
     "Hmmmmm..." => 1,
@@ -42,6 +18,8 @@ $pic_id = $_POST["pic_id"];
 
 if ($logged_in == 0){
 
+    $rating = $_POST["rating"];
+
     $sql = "UPDATE users SET lastpicid = "
         .$pic_id
         ." + 1 WHERE userid = '"
@@ -53,6 +31,17 @@ if ($logged_in == 0){
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
+
+    $sql = "SELECT lastpicid FROM users WHERE userid= '"
+        .$email
+        ."'";
+
+    $result = $conn->query($sql);
+
+    $row = $result->fetch_assoc();
+    $last_pic_id = $row["lastpicid"];
+    echo $last_pic_id;
+    $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
 
     $sql = "INSERT INTO scores (picid, score, userid, uniqueid) VALUES ("
         . $pic_id
@@ -71,6 +60,30 @@ if ($logged_in == 0){
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
+}
+else {
+    $sql = "INSERT INTO users (userid, lastpicid) VALUES ('"
+        .$email
+        ."',1) ON DUPLICATE KEY UPDATE lastpicid = lastpicid";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Logged in!";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+
+    $sql = "SELECT lastpicid FROM users WHERE userid= '"
+        .$email
+        ."'";
+
+    $result = $conn->query($sql);
+
+    $row = $result->fetch_assoc();
+    $last_pic_id = $row["lastpicid"];
+    echo $last_pic_id;
+    $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
+
 }
 
 ?>
