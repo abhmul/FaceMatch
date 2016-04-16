@@ -57,7 +57,7 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
                     </tr>
                 </table>
                 <h3 class="qTitle">Rate the picture above? </h3>
-                <form action="index.php" method="post" style="height: 100%">
+                <form action="index.php" method="post">
                     <!--<input type="text" name="answer" size="65" /> -->
                     
                     <input type = 'hidden' name = 'pic_id' value = '<?php echo $last_pic_id?>'>
