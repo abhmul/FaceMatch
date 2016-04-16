@@ -69,13 +69,13 @@ if ($logged_in == 0){
 
     $sql = "INSERT INTO genders (picid, gender) VALUES ("
         .$pic_id
-        .", NOT"
+        .", NOT "
         .$score
-        ."XOR "
+        ." XOR "
         .$likenum
-        .") ON DUPLICATE KEY UPDATE score = NOT"
+        .") ON DUPLICATE KEY UPDATE score = NOT "
         .$score
-        ."XOR "
+        ." XOR "
         .$likenum;
 
     if ($conn->query($sql) === TRUE) {
