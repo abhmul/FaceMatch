@@ -6,7 +6,7 @@ $logged_in = (int)$_POST["logged_in?"];
 
 $sql = "INSERT INTO users (userid, lastpicid) VALUES ('"
     .$email
-    ."',1) ON DUPLICATE KEY UPDATE lastpicid = lastpicid + 1";
+    ."',1) ON DUPLICATE KEY UPDATE lastpicid = lastpicid";
 
 if ($conn->query($sql) === TRUE) {
     echo "Logged in!";
@@ -42,6 +42,15 @@ $pic_id = $_POST["pic_id"];
 
 if ($logged_in == 0){
 
+    $sql = "INSERT INTO users (userid, lastpicid) VALUES ('"
+        .$email
+        ."', lastpicid = lastpicid + 1)";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+
     $sql = "INSERT INTO scores (picid, score, userid) VALUES ("
         . $pic_id
         . " , "
@@ -51,7 +60,7 @@ if ($logged_in == 0){
         . "')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Logged in!";
+        echo "Thank You!";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
