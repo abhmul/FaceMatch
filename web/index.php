@@ -26,26 +26,43 @@ if ($logged_in == 0){
     $likenum = $_POST["pref"];
     $score = $rate_to_score[$rating];
 
-    $sql = "UPDATE users SET lastpicid = "
-        .$pic_id
-        ." + 1 WHERE userid = '"
-        .$email
-        ."'";
+    $correct_gender = 1;
+    while ($correct_gender == 1) {
 
-    if ($conn->query($sql) === TRUE) {
-        echo "";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        $sql = "UPDATE users SET lastpicid = "
+            . $pic_id
+            . " + 1 WHERE userid = '"
+            . $email
+            . "'";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
+        $last_pic_id = $pic_id +1;
+
+        $sql = "SELECT gender FROM genders WHERE picid= "
+            .$last_pic_id;
+
+        $result = $conn->query($sql);
+
+        $row = $result->fetch_assoc();
+        $pic_gender = $row["gender"];
+
+        $correct_gender = (int)($likenum != $pic_gender);
+
     }
 
-    $sql = "SELECT lastpicid FROM users WHERE userid= '"
-        .$email
-        ."'";
-
-    $result = $conn->query($sql);
-
-    $row = $result->fetch_assoc();
-    $last_pic_id = $row["lastpicid"];
+//    $sql = "SELECT lastpicid FROM users WHERE userid= '"
+//        .$email
+//        ."'";
+//
+//    $result = $conn->query($sql);
+//
+//    $row = $result->fetch_assoc();
+//    $last_pic_id = $row["lastpicid"];
     echo $last_pic_id;
     $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
 
