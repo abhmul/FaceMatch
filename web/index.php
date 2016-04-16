@@ -174,9 +174,9 @@ else {
     <title>FaceMatch Survey</title>
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css"/>
     <style type="text/css">
-           h1 { font-family: Roboto;}
-           h2 { font-family: Roboto;}
-           h3 { font-family: Roboto;}
+           h1 { font-family: Roboto; font-size: 49px;}
+           h2 { font-family: Roboto; font-size: 20px;}
+           h3 { font-family: Roboto; font-size: 15px;}
            body { text-align:center; }
     </style>
 </head>
@@ -201,12 +201,12 @@ else {
                     <input type = 'hidden' name = 'email' value = '<?php echo $email?>'>
                     <input type = 'hidden' name = 'pref' value = '<?php echo $likenum?>'>
                     <input type = 'hidden' name = 'logged_in?' value = "0">
-                    <input type = 'submit' name = 'rating' value = 'Wrong Gender!'>
-                    <input type = 'submit' name = 'rating' value = 'Hmmmmm...'>
-                    <input type = 'submit' name = 'rating' value = 'OK'>
-                    <input type = 'submit' name = 'rating' value = 'Nice'>
-                    <input type = 'submit' name = 'rating' value = 'Hot'>
-                    <input type = 'submit' name = 'rating' value = 'Stunning'>
+                    <input type = 'submit' name = 'rating' value = 'Wrong Gender!' style = "height: 75px; width: 150px; font-size: 20px; font-family: Roboto;">
+                    <input type = 'submit' name = 'rating' value = 'Hmmmmm...' style = "height: 75px; width: 150px; font-size: 20px; font-family: Roboto;">
+                    <input type = 'submit' name = 'rating' value = 'OK' style = "height: 75px; width: 150px; font-size: 20px; font-family: Roboto;">
+                    <input type = 'submit' name = 'rating' value = 'Nice' style = "height: 75px; width: 150px; font-size: 20px; font-family: Roboto;">
+                    <input type = 'submit' name = 'rating' value = 'Hot' style = "height: 75px; width: 150px; font-size: 20px; font-family: Roboto;">
+                    <input type = 'submit' name = 'rating' value = 'Stunning' style = "height: 75px; width: 150px; font-size: 20px; font-family: Roboto;">
                 </form>
             </div><!-- END entry -->
         </div><!-- END content -->
