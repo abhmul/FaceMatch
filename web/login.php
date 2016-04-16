@@ -29,8 +29,9 @@ include('config/connection.php'); //Attach our connection script
     <h3 class="qTitle">Email: </h3>
     <form action="index.php" method="post">
         <input type="text" name="email" size="65" />
-        <input type="submit" value="Submit" name="submit" />
-        <input type="hidden" name="questionid" value="questionid" />
+        <input type="submit" value="I like Guys!" name="like" />
+        <input type="submit" value="I like Girls!" name="like" />
+<!--        <input type="hidden" name="questionid" value="questionid" />-->
 <!--        <input type="hidden" name="submitted" value="1" />-->
         <input type = 'hidden' name = 'logged_in?' value = "1">
     </form>

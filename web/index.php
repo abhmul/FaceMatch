@@ -14,6 +14,10 @@ $rate_to_score = array(
 
 );
 
+$like_to_num = array(
+    "I like Guys!" => 0,
+    "I like Girls!" => 1
+);
 
 if ($logged_in == 0){
 
@@ -63,9 +67,15 @@ if ($logged_in == 0){
     }
 }
 else {
-    $sql = "INSERT INTO users (userid, lastpicid) VALUES ('"
+    $like = $_POST["like"];
+    $likenum = $like_to_num[$like];
+
+    $sql = "INSERT INTO users (userid, lastpicid, prefer) VALUES ('"
         .$email
-        ."',1) ON DUPLICATE KEY UPDATE lastpicid = lastpicid";
+        ."', 1, "
+        .$likenum
+        .") ON DUPLICATE KEY UPDATE prefer = "
+        .$likenum;
 
     if ($conn->query($sql) === TRUE) {
         echo "Logged in!";
