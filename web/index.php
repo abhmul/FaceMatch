@@ -46,7 +46,7 @@ if ($logged_in == 0){
 
     //Check if query successful
     if ($conn->query($sql) === TRUE) {
-        echo "Thank You!";
+//        echo "Thank You!";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
@@ -64,7 +64,7 @@ if ($logged_in == 0){
         .")";
 
     if ($conn->query($sql) === TRUE) {
-        echo " Gender Recorded!";
+//        echo " Gender Recorded!";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
@@ -81,7 +81,7 @@ if ($logged_in == 0){
             . "'";
 
         if ($conn->query($sql) === TRUE) {
-            echo "";
+//            echo "";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
@@ -94,7 +94,7 @@ if ($logged_in == 0){
             .", 2) ON DUPLICATE KEY UPDATE gender = gender";
 
         if ($conn->query($sql) === TRUE) {
-            echo " Gender Recorded!";
+//            echo " Gender Recorded!";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
@@ -102,20 +102,20 @@ if ($logged_in == 0){
         $sql = "SELECT gender FROM genders WHERE picid= "
             .$last_pic_id;
 
-        echo "<br>" . $sql;
+//        echo "<br>" . $sql;
 
         $result = $conn->query($sql);
 
         $row = $result->fetch_assoc();
         $pic_gender = $row["gender"];
-        echo "<br>" . $pic_gender;
+//        echo "<br>" . $pic_gender;
 
         if ($pic_gender == 2){
             $correct_gender = 0;
         }
         else {
             $correct_gender = (int)($likenum != $pic_gender);
-            echo "<br>" . $correct_gender;
+//            echo "<br>" . $correct_gender;
         }
     }
 
@@ -127,7 +127,7 @@ if ($logged_in == 0){
 //
 //    $row = $result->fetch_assoc();
 //    $last_pic_id = $row["lastpicid"];
-    echo $last_pic_id;
+//    echo $last_pic_id;
     $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
 
 
@@ -158,7 +158,7 @@ else {
 
     $row = $result->fetch_assoc();
     $last_pic_id = $row["lastpicid"];
-    echo $last_pic_id;
+//    echo $last_pic_id;
     $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
 
 }
