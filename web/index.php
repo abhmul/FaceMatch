@@ -128,7 +128,7 @@ if ($logged_in == 0){
 //    $row = $result->fetch_assoc();
 //    $last_pic_id = $row["lastpicid"];
 //    echo $last_pic_id;
-    $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
+    $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".png";
 
 
 }
@@ -159,7 +159,7 @@ else {
     $row = $result->fetch_assoc();
     $last_pic_id = $row["lastpicid"];
 //    echo $last_pic_id;
-    $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
+    $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".png";
 
 }
 
