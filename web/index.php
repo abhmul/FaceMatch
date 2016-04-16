@@ -69,11 +69,11 @@ if ($logged_in == 0){
 
     $sql = "INSERT INTO genders (picid, gender) VALUES ("
         .$pic_id
-        .", NOT "
+        .","
         .$score
         ." XOR "
         .$likenum
-        .") ON DUPLICATE KEY UPDATE gender = NOT "
+        .") ON DUPLICATE KEY UPDATE gender = "
         .$score
         ." XOR "
         .$likenum;
