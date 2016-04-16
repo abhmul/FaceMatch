@@ -42,16 +42,21 @@ if ($logged_in == 0){
         }
 
         $last_pic_id = $pic_id +1;
+        $pic_id = $last_pic_id;
 
         $sql = "SELECT gender FROM genders WHERE picid= "
             .$last_pic_id;
+
+        echo "<br>" . $sql;
 
         $result = $conn->query($sql);
 
         $row = $result->fetch_assoc();
         $pic_gender = $row["gender"];
+        echo "<br>" . $pic_gender;
 
         $correct_gender = (int)($likenum != $pic_gender);
+        echo "<br>" . $correct_gender;
 
     }
 
