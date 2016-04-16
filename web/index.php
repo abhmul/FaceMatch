@@ -13,12 +13,13 @@ $rate_to_score = array(
     "Stunning" => 5
 
 );
-$score = $rate_to_score[$rating];
-$pic_id = $_POST["pic_id"];
+
 
 if ($logged_in == 0){
 
+    $pic_id = $_POST["pic_id"];
     $rating = $_POST["rating"];
+    $score = $rate_to_score[$rating];
 
     $sql = "UPDATE users SET lastpicid = "
         .$pic_id
