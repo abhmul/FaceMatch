@@ -47,7 +47,7 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
 <div class="wrapOverall" style="height: 100%">
     <div class="header"><h2 class='siteTitle'>FaceMatch Survey</h2></div><!-- END header -->
     <div class="wrapContent" style="height: 100%">
-        <div class="content" style="height: 100%">
+        <div class="content">
             <div class="entry">
                 <table cellspacing="10" cellpadding="10" align="center" style="height: 100%">
                     <tr class="image_row">
