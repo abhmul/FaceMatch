@@ -189,7 +189,7 @@ else {
                 <table cellspacing="10" cellpadding="10" align="center">
                     <tr class="image_row">
                         <td class="pic">
-                            <img src="images/<?php echo $pic_filename?>" alt="Mountain View" width="256" class = "widthSet">
+                            <img src="images/<?php echo $pic_filename?>" alt="Mountain View" width="500" class = "widthSet">
                         </td>
                     </tr>
                 </table>
