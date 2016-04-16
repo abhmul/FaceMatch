@@ -27,6 +27,42 @@ if ($logged_in == 0){
     $score = $rate_to_score[$rating];
 
     $correct_gender = 1;
+    
+    $sql = "INSERT INTO scores (picid, score, userid, uniqueid) VALUES ("
+        . $pic_id
+        . ", "
+        . $score
+        . ", '"
+        . $email
+        ."', '"
+        .$pic_id
+        .$email
+        ."') ON DUPLICATE KEY UPDATE score = "
+        .$score;
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Thank You!";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    $sql = "INSERT INTO genders (picid, gender) VALUES ("
+        .$pic_id
+        .", NOT ("
+        .$score
+        ." XOR "
+        .$likenum
+        .")) ON DUPLICATE KEY UPDATE gender = NOT ("
+        .$score
+        ." XOR "
+        .$likenum
+        .")";
+
+    if ($conn->query($sql) === TRUE) {
+        echo " Gender Recorded!";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
     while ($correct_gender == 1) {
 
         $sql = "UPDATE users SET lastpicid = "
@@ -85,41 +121,7 @@ if ($logged_in == 0){
     echo $last_pic_id;
     $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
 
-    $sql = "INSERT INTO scores (picid, score, userid, uniqueid) VALUES ("
-        . $pic_id
-        . ", "
-        . $score
-        . ", '"
-        . $email
-        ."', '"
-        .$pic_id
-        .$email
-        ."') ON DUPLICATE KEY UPDATE score = "
-        .$score;
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Thank You!";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-
-    $sql = "INSERT INTO genders (picid, gender) VALUES ("
-        .$pic_id
-        .", NOT ("
-        .$score
-        ." XOR "
-        .$likenum
-        .")) ON DUPLICATE KEY UPDATE gender = NOT ("
-        .$score
-        ." XOR "
-        .$likenum
-        .")";
-
-    if ($conn->query($sql) === TRUE) {
-        echo " Gender Recorded!";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
 }
 else {
     $like = $_POST["like"];
