@@ -55,9 +55,13 @@ if ($logged_in == 0){
         $pic_gender = $row["gender"];
         echo "<br>" . $pic_gender;
 
-        $correct_gender = (int)($likenum != $pic_gender);
-        echo "<br>" . $correct_gender;
-
+        if ($pic_gender == 2){
+            $correct_gender = 0;
+        }
+        else {
+            $correct_gender = (int)($likenum != $pic_gender);
+            echo "<br>" . $correct_gender;
+        }
     }
 
 //    $sql = "SELECT lastpicid FROM users WHERE userid= '"
