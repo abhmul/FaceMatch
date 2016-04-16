@@ -44,6 +44,16 @@ if ($logged_in == 0){
         $last_pic_id = $pic_id +1;
         $pic_id = $last_pic_id;
 
+        $sql = "INSERT INTO genders (picid, gender) VALUES ("
+            .$pic_id
+            .", 2) ON DUPLICATE KEY UPDATE gender = gender";
+
+        if ($conn->query($sql) === TRUE) {
+            echo " Gender Recorded!";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
         $sql = "SELECT gender FROM genders WHERE picid= "
             .$last_pic_id;
 
