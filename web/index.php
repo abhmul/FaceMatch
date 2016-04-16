@@ -69,14 +69,15 @@ if ($logged_in == 0){
 
     $sql = "INSERT INTO genders (picid, gender) VALUES ("
         .$pic_id
-        .","
+        .", NOT ("
         .$score
         ." XOR "
         .$likenum
-        .") ON DUPLICATE KEY UPDATE gender = "
+        .")) ON DUPLICATE KEY UPDATE gender = NOT ("
         .$score
         ." XOR "
-        .$likenum;
+        .$likenum
+        .")";
 
     if ($conn->query($sql) === TRUE) {
         echo " Gender Recorded!";
