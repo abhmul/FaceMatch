@@ -49,7 +49,7 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
     <div class="wrapContent" style="height: 100%">
         <div class="content">
             <div class="entry">
-                <table cellspacing="10" cellpadding="10" align="center" style="height: 100%">
+                <table cellspacing="10" cellpadding="10" align="center">
                     <tr class="image_row">
                         <td class="pic">
                             <img src="images/<?php echo $pic_filename?>" alt="Mountain View" width="256" class = "widthSet">
