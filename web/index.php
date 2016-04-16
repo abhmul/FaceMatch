@@ -182,7 +182,7 @@ else {
 </head>
 <body style="height: 100%">
 <div class="wrapOverall" style="height: 100%">
-    <div class="header"><h2 class='siteTitle' style = "font: 20px roboto, sans-serif;">FaceMatch Survey</h2></div><!-- END header -->
+    <div class="header"><h1 class='siteTitle' style = "font: 49px roboto, sans-serif;">FaceMatch Survey</h1></div><!-- END header -->
     <div class="wrapContent" style="height: 100%">
         <div class="content">
             <div class="entry">
@@ -201,12 +201,12 @@ else {
                     <input type = 'hidden' name = 'email' value = '<?php echo $email?>'>
                     <input type = 'hidden' name = 'pref' value = '<?php echo $likenum?>'>
                     <input type = 'hidden' name = 'logged_in?' value = "0">
-                    <input type = 'submit' name = 'rating' value = 'Wrong Gender!' style = "height: 50px; width: 100px; font: 15px roboto, sans-serif;">
-                    <input type = 'submit' name = 'rating' value = 'Hmmmmm...' style = "height: 50px; width: 100px; font: 15px roboto, sans-serif;">
-                    <input type = 'submit' name = 'rating' value = 'OK' style = "height: 50px; width: 100px; font: 15px roboto, sans-serif;">
-                    <input type = 'submit' name = 'rating' value = 'Nice' style = "height: 50px; width: 100px; font: 15px roboto, sans-serif;">
-                    <input type = 'submit' name = 'rating' value = 'Hot' style = "height: 50px; width: 100px; font: 15px roboto, sans-serif;">
-                    <input type = 'submit' name = 'rating' value = 'Stunning' style = "height: 50px; width: 100px; font: 15px roboto, sans-serif;">
+                    <input type = 'submit' name = 'rating' value = 'Wrong Gender!' style = "height: 60px; width: 120px; font: 15px roboto, sans-serif;">
+                    <input type = 'submit' name = 'rating' value = 'Hmmmmm...' style = "height: 60px; width: 120px; font: 15px roboto, sans-serif;">
+                    <input type = 'submit' name = 'rating' value = 'OK' style = "height: 60px; width: 120px; font: 15px roboto, sans-serif;">
+                    <input type = 'submit' name = 'rating' value = 'Nice' style = "height: 60px; width: 120px; font: 15px roboto, sans-serif;">
+                    <input type = 'submit' name = 'rating' value = 'Hot' style = "height: 60px; width: 120px; font: 15px roboto, sans-serif;">
+                    <input type = 'submit' name = 'rating' value = 'Stunning' style = "height: 60px; width: 120px; font: 15px roboto, sans-serif;">
                 </form>
             </div><!-- END entry -->
         </div><!-- END content -->

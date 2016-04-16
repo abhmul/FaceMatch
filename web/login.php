@@ -26,9 +26,9 @@ include('config/connection.php'); //Attach our connection script
 <h1>FaceMatch Survey Login</h1>
 <h2>Log in to continue you the survey from where you left off.</h2>
 <div class="entry">
-    <h3 class="qTitle">Email: </h3>
+    <h3 class="qTitle" style = "font: 15px roboto, sans-serif;">Username or NetID: </h3>
     <form action="index.php" method="post">
-        <input type="text" name="email" size="65" />
+        <input type="text" name="email" size="20" style = "font: 30px roboto, sans-serif;"/>
         <input type="submit" value="I like Guys!" name="like" />
         <input type="submit" value="I like Girls!" name="like" />
 <!--        <input type="hidden" name="questionid" value="questionid" />-->
