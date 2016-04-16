@@ -118,3 +118,10 @@ h3.qTitle{
 .heightSet {
     max-height: 100px;
 }
+
+.fm-form .submit {
+    height: 75px;
+    width: 150px;
+    font-size: 34px;
+    font-family: Roboto;
+}
