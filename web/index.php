@@ -42,7 +42,9 @@ $pic_id = $_POST["pic_id"];
 
 if ($logged_in == 0){
 
-    $sql = "UPDATE users SET lastpicid = lastpicid + 1 WHERE userid = '"
+    $sql = "UPDATE users SET lastpicid = "
+        .$pic_id
+        ." + 1 WHERE userid = '"
         .$email
         ."'";
 
@@ -52,13 +54,17 @@ if ($logged_in == 0){
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 
-    $sql = "INSERT INTO scores (picid, score, userid) VALUES ("
+    $sql = "INSERT INTO scores (picid, score, userid, uniqueid) VALUES ("
         . $pic_id
-        . " , "
+        . ", "
         . $score
-        . " , '"
+        . ", '"
         . $email
-        . "')";
+        ."', '"
+        .$pic_id
+        .$email
+        ."') ON DUPLICATE KEY UPDATE score = "
+        .$score;
 
     if ($conn->query($sql) === TRUE) {
         echo "Thank You!";
