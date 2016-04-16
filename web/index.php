@@ -201,7 +201,7 @@ else {
                     <input type = 'hidden' name = 'email' value = '<?php echo $email?>'>
                     <input type = 'hidden' name = 'pref' value = '<?php echo $likenum?>'>
                     <input type = 'hidden' name = 'logged_in?' value = "0">
-                    <input type = 'submit' name = 'rating' value = 'Wrong Gender!' style = "height: 75px; width: 150px; font-size: 20px; font-family: Roboto;">
+                    <input type = 'submit' name = 'rating' value = '<h2>Wrong Gender!</h2>' style = "height: 75px; width: 150px; font-size: 20px; font-family: Roboto;">
                     <input type = 'submit' name = 'rating' value = 'Hmmmmm...' style = "height: 75px; width: 150px; font-size: 20px; font-family: Roboto;">
                     <input type = 'submit' name = 'rating' value = 'OK' style = "height: 75px; width: 150px; font-size: 20px; font-family: Roboto;">
                     <input type = 'submit' name = 'rating' value = 'Nice' style = "height: 75px; width: 150px; font-size: 20px; font-family: Roboto;">
