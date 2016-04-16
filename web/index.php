@@ -23,6 +23,7 @@ if ($logged_in == 0){
 
     $pic_id = $_POST["pic_id"];
     $rating = $_POST["rating"];
+    $likenum = $_POST["pref"];
     $score = $rate_to_score[$rating];
 
     $sql = "UPDATE users SET lastpicid = "
@@ -62,6 +63,23 @@ if ($logged_in == 0){
 
     if ($conn->query($sql) === TRUE) {
         echo "Thank You!";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    $sql = "INSERT INTO genders (picid, gender) VALUES ("
+        .$pic_id
+        .", NOT"
+        .$score
+        ."XOR "
+        .$likenum
+        .") ON DUPLICATE KEY UPDATE score = NOT"
+        .$score
+        ."XOR "
+        .$likenum;
+
+    if ($conn->query($sql) === TRUE) {
+        echo " Gender Recorded!";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
@@ -133,6 +151,7 @@ else {
                     
                     <input type = 'hidden' name = 'pic_id' value = '<?php echo $last_pic_id?>'>
                     <input type = 'hidden' name = 'email' value = '<?php echo $email?>'>
+                    <input type = 'hidden' name = 'pref' value = '<?php echo $likenum?>'>
                     <input type = 'hidden' name = 'logged_in?' value = "0">
                     <input type = 'submit' name = 'rating' value = 'Wrong Gender!'>
                     <input type = 'submit' name = 'rating' value = 'Hmmmmm...'>
