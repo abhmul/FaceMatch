@@ -50,6 +50,7 @@ if ($logged_in == 0){
         echo "";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 
     $sql = "INSERT INTO scores (picid, score, userid) VALUES ("
         . $pic_id
