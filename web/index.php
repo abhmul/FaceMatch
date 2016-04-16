@@ -45,7 +45,7 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
 </head>
 <body style="height: 100%">
 <div class="wrapOverall" style="height: 100%">
-    <div class="header" style="height: 100%"><h2 class='siteTitle'>FaceMatch Survey</h2></div><!-- END header -->
+    <div class="header"><h2 class='siteTitle'>FaceMatch Survey</h2></div><!-- END header -->
     <div class="wrapContent" style="height: 100%">
         <div class="content" style="height: 100%">
             <div class="entry" style="height: 100%">
@@ -56,7 +56,7 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
                         </td>
                     </tr>
                 </table>
-                <h3 class="qTitle" style="height: 100%">Rate the picture above? </h3>
+                <h3 class="qTitle">Rate the picture above? </h3>
                 <form action="index.php" method="post" style="height: 100%">
                     <!--<input type="text" name="answer" size="65" /> -->
                     
@@ -71,7 +71,7 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
         </div><!-- END content -->
     </div><!-- END wrapContent -->
 
-    <div class="footer" style="height: 100%"><p><a href="admin/index.php">Admin Panel</a></p></div><!-- END footer -->
+<!--    <div class="footer"><p><a href="admin/index.php">Admin Panel</a></p></div><!-- END footer -->-->
 </div><!-- END wrapOverall -->
 </body>
 </html>
