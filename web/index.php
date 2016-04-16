@@ -26,6 +26,33 @@ echo $last_pic_id;
 $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
 
 
+$rating = $_POST["rating"];
+$rate_to_score = array(
+    "Wrong Gender!" => 0,
+    "Hmmmmm..." => 1,
+    "OK" => 2,
+    "Nice" => 3,
+    "Hot" => 4,
+    "Stunning" => 5
+
+);
+$score = $rate_to_score[$rating];
+$pic_id = $_POST["pic_id"];
+
+$sql = "INSERT INTO scores (picid, score, userid) VALUES ("
+        .$pic_id
+        ." , "
+        .$score
+        ." , '"
+        .$email
+        ."')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Logged in!";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
 ?>
 
 
@@ -61,7 +88,8 @@ $pic_filename = str_pad($last_pic_id, 4, "0", STR_PAD_LEFT).".jpg";
                     <!--<input type="text" name="answer" size="65" /> -->
                     
                     <input type = 'hidden' name = 'pic_id' value = '<?php echo $last_pic_id?>'>
-                    <input type = 'submit' name = 'rating' value = Hmmmmm...'>
+                    <input type = 'submit' name = 'rating' value = 'Wrong Gender!'>
+                    <input type = 'submit' name = 'rating' value = 'Hmmmmm...'>
                     <input type = 'submit' name = 'rating' value = 'OK'>
                     <input type = 'submit' name = 'rating' value = 'Nice'>
                     <input type = 'submit' name = 'rating' value = 'Hot'>
