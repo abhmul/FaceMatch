@@ -190,8 +190,9 @@ else {
         <div class="content">
             <div class="entry">
                 <h3></h3>
-                <h3 class="qTitle" style = "padding: 0px 50px; font: 25px roboto, sans-serif;">Rate the pictures below based on how you see the person. Please try to
-                be as consistent as you can.If you happen to come across a wrong gender, go ahead and click wrong gender
+                <h3 class="qTitle" style = "padding: 0px 50px; font: 25px roboto, sans-serif;">Rate the pictures below based on the person's attractiveness. Please try to
+                be as consistent as you can (for me "Nice" means I'm mildly attracted, "OK" and "Hmmm..." mean I don't find the person attractive or I find the person
+                unattractive respectively).If you happen to come across a wrong gender, go ahead and click wrong gender
                  so the survey can keep track of correct genders. Right now there are about 1200 pictures on the survey
                 but more will be uploaded soon. If you've been on for a while and the picture does not load, you might
                 have the last picture. If any errors appear, go ahead and logout, then log back in. Come back later when
