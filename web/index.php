@@ -189,6 +189,12 @@ else {
     <div class="wrapContent" style="height: 100%">
         <div class="content">
             <div class="entry">
+                <h3></h3>
+                <h3 class="qTitle" style = "padding: 0px 50px; font: 25px roboto, sans-serif;">Rate the pictures below based on how you see the person. Please try to
+                be as consistent as you can.If you happen to come across a wrong gender, go ahead and click wrong gender
+                 so the survey can keep track of correct genders. Right now there are about 1200 pictures on the survey
+                but more will be uploaded soon. If you've been on for a while and the picture does not load, you might
+                have the last picture. Come back later when the new pictures have been uploaded! Thank you for your help!</h3>
                 <table cellspacing="10" cellpadding="10" align="center">
                     <tr class="image_row">
                         <td class="pic">
