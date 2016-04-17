@@ -182,7 +182,10 @@ else {
 </head>
 <body style="height: 100%">
 <div class="wrapOverall" style="height: 100%">
-    <div class="header"><h1 class='siteTitle' style = "font: 49px roboto, sans-serif;">FaceMatch Survey</h1></div><!-- END header -->
+    <div class="header">
+        <h1 class='siteTitle' style = "font: 49px roboto, sans-serif;">FaceMatch Survey</h1>
+        <a href="login.php">Logout</a>
+    </div><!-- END header -->
     <div class="wrapContent" style="height: 100%">
         <div class="content">
             <div class="entry">
