@@ -184,7 +184,7 @@ else {
 <div class="wrapOverall" style="height: 100%">
     <div class="header">
         <h1 class='siteTitle' style = "font: 49px roboto, sans-serif;">FaceMatch Survey</h1>
-        <a href="login.php">Logout</a>
+        <a class = 'siteTitle' href="login.php" style = "text-align: right;">Logout</a>
     </div><!-- END header -->
     <div class="wrapContent" style="height: 100%">
         <div class="content">
